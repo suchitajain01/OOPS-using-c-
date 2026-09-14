@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+class Example
+{
+    int a,b;
+    public:
+    void getab(int , int);
+    void display();
+
+friend void average (Example);
+
+};
+
+void Example :: getab(int x,int y)
+{
+
+    a = x;
+    b =y;
+    
+}
+
+void Example :: display()
+{
+   cout<<a<<b;
+
+}
+
+void average (Example E)
+{
+    int a  = (E.a+E.b)/2;
+    cout<<a;
+}
+
+int main()
+{
+  Example E1;
+  E1.getab(10,20);
+  E1.display();
+  average(E1);
+
+  return 0;
+
+}
