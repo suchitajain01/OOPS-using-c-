@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Example
+{
+int a,b;
+public:
+
+Example(int x, int y)
+{
+a  = x;
+b = y;
+
+}
+
+
+void display();
+
+};
+
+Example :: Example(int x, int y)
+{
+  a= x;
+  b = y;
+
+
+}
+
+void Example :: display()
+{
+
+cout<<a<<endl;
+cout<<b<<endl;
+
+}
+
+int main()
+{
+
+Example E1 = Example(100,200);
+E1.display();
+
+Example E2 (60,120);
+E2.display();
+
+
+}
