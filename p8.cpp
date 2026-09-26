@@ -11,7 +11,7 @@ using namespace second;
 
 int main()
 {
-    cout<<x;
+    cout<<first::x;
 }
 
 namespace second
