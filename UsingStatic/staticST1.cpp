@@ -1,46 +1,45 @@
-#include <bits/stdc++.h>
+##include <iostream>
 using namespace std;
 
 class Example
 {
-int a;
+    int a;
+    static int n;
 
 public:
-static void display();
-
-void geta();
-void display();
-static void show();
-
+    void geta(int x);
+    void display();
+    static void show();
 };
 
-void Example :: geta(int x)
+// Define the static data member outside the class
+int Example::n = 10;
+
+void Example::geta(int x)
 {
     a = x;
 }
 
-
-void Example :: display();
+void Example::display()
 {
-  
-    cout<<a<<""<<endl;
-    cout<<n<<""<<endl;
+    cout << "a = " << a << endl;
+    cout << "n = " << n << endl;
 }
 
-void Example :: show()
+void Example::show()
 {
-
-    cout<<"inside class member function"<<endl;
-    cout<<n<<endl;
-    cout<<a;
-
+    cout << "Inside static member function" << endl;
+    cout << "n = " << n << endl;
 }
-
 
 int main()
 {
-Example E1;
-E1.geta(12);
-E1.display();
-    
+    Example E1;
+
+    E1.geta(12);
+    E1.display();
+
+    Example::show();
+
+    return 0;
 }

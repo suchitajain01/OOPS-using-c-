@@ -47,12 +47,14 @@ int main()
     cin >> x >> y;
 
     Sum s1;
-
     s1.calculate(x, y);
 
-    int result = s1.display();
+    cout << "The sum of integers is: " << s1.display() << endl;
 
-    cout << "The sum is: " << result << endl;
+    s1.calculate(3.5f, 7.5f);
+
+
+    cout << "The float sum is: " << s1.display(0.0f) << endl;
 
     return 0;
 }
