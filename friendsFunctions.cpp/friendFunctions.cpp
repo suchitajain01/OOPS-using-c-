@@ -1,7 +1,7 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-class B;
+class B; // Forward declaration
 
 class A
 {
@@ -9,14 +9,22 @@ class A
 
 public:
     void geta(int);
+    void showa();
+    void displayB(const B&);
 
-    friend class B;  // B can access private members of A
+    friend class B; // B can access A's private members
 };
 
 class B
 {
+    int b;
+
 public:
-    void display(A);
+    void getb(int);
+    void showb();
+    void displayA(const A&);
+
+    friend class A; // A can access B's private members
 };
 
 void A::geta(int x)
@@ -24,20 +32,44 @@ void A::geta(int x)
     a = x;
 }
 
-void B::display(A obj1)
+void A::showa()
 {
-    cout << obj1.a << endl;
+    cout << "a = " << a << endl;
+}
+
+void B::getb(int x)
+{
+    b = x;
+}
+
+void B::showb()
+{
+    cout << "b = " << b << endl;
+}
+
+void B::displayA(const A& obj)
+{
+    cout << "A's private value: " << obj.a << endl;
+}
+
+void A::displayB(const B& obj)
+{
+    cout << "B's private value: " << obj.b << endl;
 }
 
 int main()
 {
     A obj1;
-
-    obj1.geta(10);
-
     B obj2;
 
-    obj2.display(obj1);
+    obj1.geta(10);
+    obj2.getb(20);
+
+    obj1.showa();
+    obj2.showb();
+
+    obj2.displayA(obj1);
+    obj1.displayB(obj2);
 
     return 0;
 }

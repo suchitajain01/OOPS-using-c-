@@ -34,7 +34,7 @@ int main()
 Example1 E1;
 E1.geta(10);
 E1.display();
-
+Example1 :: display();
 
 
 }

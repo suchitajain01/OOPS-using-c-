@@ -14,7 +14,7 @@ void display();
 
 };
 
-int Example :: count;
+int Example :: count = 0;
 
 
 void Example :: getdata(int x)

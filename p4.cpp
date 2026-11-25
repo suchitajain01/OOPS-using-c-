@@ -35,7 +35,7 @@ int main()
     float r1;
     cin>>r1;
 
-    circle c1;''
+    circle c1;
     c1.calculate(r1);
      float res = c1.display();
     cout<<"the area is:"<<res<<endl;

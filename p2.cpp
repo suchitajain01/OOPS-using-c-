@@ -7,17 +7,18 @@ class Example
 int a,b;
 
 public:    
-void getdata();
+void getdata(int , int );
 void print();
 
 };
 
-void Example :: getdata()
+void Example :: getdata(int x, int y)
 {
 
-cout<<"enter the data";
-cin>>a>>b;
+a = x;
+b = y;
 }
+
 
 void Example:: print()
 {
@@ -28,8 +29,10 @@ cout<<"the numbers are:"<<a<<""<<b<<endl;
 
 int main()
 {
+    int a1,b1;
+cin>>a1>>b1;
 Example E1;
-E1.getdata();
+E1.getdata(a1, b1);
 E1.print();
 return 0;
 }

@@ -4,6 +4,7 @@ using namespace std;
 class Example
 {
     int a,b;
+    
     public:
     void getab(int , int);
     void display();
